@@ -1,0 +1,70 @@
+---
+title: "GETable Usage"
+author: "Yongfu Liao"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    includes:
+      in_header: dfFromWeb.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Table from a JSON file
+
+This table is generated from a (locally or GitHub Pages served) JSON file:
+
+```{r echo=FALSE, results='asis'}
+GETable::renderTable(url="data/df.json")
+```
+
+
+Note the JSON format of the source data in `./data/df.json`:
+
+```json
+[
+  {
+    "colname1": "value1-1",
+    "colname2": "value1-2",
+    "colname3": "value1-3"
+  },
+  {
+    "colname1": "value2-1",
+    "colname2": "value2-2",
+    "colname3": "value2-3"
+  },
+  ...
+]
+```
+
+You can convert data frames to this format simply with `jsonlite::toJSON(df, dataframe = "rows")` or save it to a json text file with `GETable::df2file()`:
+
+```{r}
+df <- data.frame(
+  id = 1:2,
+  name = c("john", "smith"),
+  phone = c("3366-3366", "02-3366-3366")
+)
+
+GETable::df2file(df, "data/df.json")
+```
+
+
+
+## Table from Google Spreadsheet
+
+In order to use this feature, make sure that the google spreadsheet is [**viewable** for anyone who has the link](https://support.google.com/drive/answer/2494822#link_sharing).
+
+
+```{r echo=FALSE, results='asis'}
+GETable::renderTable(url="https://docs.google.com/spreadsheets/d/1KV8XOlBcax3gca5s6Wl7M06nVrpui39hHGXDv-K6gM8/edit?usp=sharing")
+```
+
+
+
+## Styling the table
+
+Edit the styles in `dfFromWeb.css` to style the table.

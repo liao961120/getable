@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^inst/rmarkdown/templates/tablefromweb/skeleton/skeleton\.html$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^vignettes$
