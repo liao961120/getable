@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML Tables with Dynamic Data in R Markdown • GETable</title>
+<title>HTML Tables with Dynamic Data in R Markdown • getable</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">GETable</a>
+        <a class="navbar-link" href="index.html">getable</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
@@ -89,11 +89,11 @@
 <h2 class="hasAnchor">
 <a href="#under-the-hood" class="anchor"></a>Under the hood</h2>
 <p><strong>GETable</strong> uses JavaScript to asynchronously request data from a web server. You can serve your data on the web, for example, on Google Spreadsheet or on static site services such as <a href="https://pages.github.com">GitHub Pages</a> and <a href="https://www.netlify.com">Netlify</a>.</p>
-<p>Hosting data by yourself requires you to first convert the data into JSON formats. This is conveniently provided by the function <code><a href="reference/df2file.html">GETable::df2file()</a></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">GETable<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/GETable/man/df2file.html">df2file</a></span>(iris, <span class="st">"output-iris.json"</span>)</a></code></pre></div>
+<p>Hosting data by yourself requires you to first convert the data into JSON formats. This is conveniently provided by the function <code><a href="https://rdrr.io/pkg/GETable/man/df2file.html">GETable::df2file()</a></code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">getable<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/getable/man/df2file.html">df2file</a></span>(iris, <span class="st">"output-iris.json"</span>)</a></code></pre></div>
 <p>You can then push <code>output-iris.json</code> to a github repo and serve this file. Then, in your <code>.Rmd</code>, simply create an HTML table from the hosted <code>output-iris.json</code> by:</p>
 <pre class="rmd"><code>```{r echo=FALSE, results='asis'}
-GETable::renderTable("https://&lt;username&gt;.github.io/&lt;repo&gt;/path/to/output-iris.json")
+getable::renderTable("https://&lt;username&gt;.github.io/&lt;repo&gt;/path/to/output-iris.json")
 ```</code></pre>
 </div>
 </div>

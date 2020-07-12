@@ -17,7 +17,7 @@ the template's structure).}
 A string representing an HTML div tag.
 }
 \description{
-This function is expected to work with \code{GETable}'s R Markdown
+This function is expected to work with \code{getable}'s R Markdown
 template, which contains an \code{.html} file, a \code{.js} file,
 and a \code{.css} file in addition to the \code{.Rmd} source file.
 The function creates an HTML string and insert it into the HTML file

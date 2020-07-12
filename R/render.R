@@ -1,6 +1,6 @@
 #' Render HTML Table in R Markdown with Data from Web
 #'
-#' This function is expected to work with \code{GETable}'s R Markdown
+#' This function is expected to work with \code{getable}'s R Markdown
 #' template, which contains an \code{.html} file, a \code{.js} file,
 #' and a \code{.css} file in addition to the \code{.Rmd} source file.
 #' The function creates an HTML string and insert it into the HTML file
@@ -57,7 +57,7 @@ renderTable <- function(url="./data/df.json") {
 #' @param df A data frame.
 #' @param output A string. The path to the exported data frame.
 #' @param ... Additional arguments arguments passed on to
-#'   \link[jsonlite]{toJSON()}.
+#'   \link[jsonlite]{toJSON}.
 #' @export
 df2file <- function(df, output = "./data/df.json", ...) {
   writeLines(jsonlite::toJSON(df, dataframe = "rows", ...), output)

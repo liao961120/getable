@@ -34,14 +34,14 @@ Compile and Enjoy!
 Hosting data by yourself requires you to first convert the data into JSON formats. This is conveniently provided by the function `GETable::df2file()`:
 
 ```r
-GETable::df2file(iris, "output-iris.json")
+getable::df2file(iris, "output-iris.json")
 ```
 
 You can then push `output-iris.json` to a github repo and serve this file. Then, in your `.Rmd`, simply create an HTML table from the hosted `output-iris.json` by:
 
 ````rmd
 ```{r echo=FALSE, results='asis'}
-GETable::renderTable("https://<username>.github.io/<repo>/path/to/output-iris.json")
+getable::renderTable("https://<username>.github.io/<repo>/path/to/output-iris.json")
 ```
 ````
 

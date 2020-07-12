@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 This table is generated from a (locally or GitHub Pages served) JSON file:
 
 ```{r echo=FALSE, results='asis'}
-GETable::renderTable(url="data/df.json")
+getable::renderTable(url="data/df.json")
 ```
 
 
@@ -40,7 +40,7 @@ Note the JSON format of the source data in `./data/df.json`:
 ]
 ```
 
-You can convert data frames to this format simply with `jsonlite::toJSON(df, dataframe = "rows")` or save it to a json text file with `GETable::df2file()`:
+You can convert data frames to this format simply with `jsonlite::toJSON(df, dataframe = "rows")` or save it to a json text file with `getable::df2file()`:
 
 ```{r}
 df <- data.frame(
@@ -49,7 +49,7 @@ df <- data.frame(
   phone = c("3366-3366", "02-3366-3366")
 )
 
-GETable::df2file(df, "data/df.json")
+getable::df2file(df, "data/df.json")
 ```
 
 
@@ -60,7 +60,7 @@ In order to use this feature, make sure that the google spreadsheet is [**viewab
 
 
 ```{r echo=FALSE, results='asis'}
-GETable::renderTable(url="https://docs.google.com/spreadsheets/d/1KV8XOlBcax3gca5s6Wl7M06nVrpui39hHGXDv-K6gM8/edit?usp=sharing")
+getable::renderTable(url="https://docs.google.com/spreadsheets/d/1KV8XOlBcax3gca5s6Wl7M06nVrpui39hHGXDv-K6gM8/edit?usp=sharing")
 ```
 
 

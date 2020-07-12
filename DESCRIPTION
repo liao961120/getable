@@ -1,4 +1,4 @@
-Package: GETable
+Package: getable
 Type: Package
 Title: HTML Tables with Dynamic Data in R Markdown
 Version: 1.0.0
