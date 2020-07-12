@@ -6,7 +6,7 @@ Authors@R:
     person(given = "Yongfu", 
            family = "Liao",
            email = "liao961120@gmail.com", 
-           role = c("aut", "cre", "cph"),
+           role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1814-2993"))
 Maintainer: Yongfu Liao <liao961120@gmail.com>
 Description: Dynamically retrieve data from the web to render HTML tables
