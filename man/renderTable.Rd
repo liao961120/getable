@@ -9,9 +9,9 @@ renderTable(url = "./data/df.csv", isjson = FALSE)
 \arguments{
 \item{url}{A string. The URL to the source data of the table to be
 created. Could be a relative path (relative to the \code{.Rmd} src
-file) or an URL to a JSON file. \code{url} could also be an URL to
-a public Google Spreadsheet. Defaults to \code{./data/df.json} (see
-the template's structure).}
+file) or an URL to a JSON or CSV file. \code{url} could also be an URL
+to a publicly viewable Google Spreadsheet. Defaults to \code{./data/df.csv}
+(see the template's structure).}
 
 \item{isjson}{Boolean. Whether the format of the self-hosted file is
 json. Defaults to \code{FALSE}. Works only when the data is self-hosted
@@ -29,4 +29,7 @@ rendered from Rmd. The code in the \code{.js} file then process the
 HTML string and retrieve data from web to create an HTML table dynamically
 when users view the rendered HTML file in the browser (a server is needed to
 served the file).
+}
+\examples{
+renderTable("https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.csv")
 }

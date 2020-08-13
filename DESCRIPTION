@@ -19,5 +19,7 @@ Encoding: UTF-8
 LazyData: true
 Suggests: 
     jsonlite,
-    rmarkdown
-RoxygenNote: 7.0.0
+    rmarkdown,
+    knitr
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr

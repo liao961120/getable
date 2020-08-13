@@ -1,0 +1,23 @@
+---
+title: "Intro"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+You can import `getable`'s default Rmd template with in RStudio by selecting: `File > New File > R Markdown > From Template > HTML Tables with Dynamic Data {GETable}`
+
+This will generate a folder.
+You can then open the Rmd source file and edit the document. Note that the relative path of the dependency files (`*.html`, `*.js`, and `*.css`) to the source Rmd must stay constant for the package to work. 
+
+See [demo](https://yongfu.name/getable/demo/) for a working example.

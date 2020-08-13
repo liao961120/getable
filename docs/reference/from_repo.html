@@ -85,6 +85,18 @@ https://raw.githubusercontent.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Intro/Intro.html">Intro</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -116,7 +128,7 @@ https://raw.githubusercontent.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/
 <code>https://raw.githubusercontent.com/&lt;username&gt;/&lt;repo&gt;/&lt;branch&gt;/&lt;path&gt;</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>from_repo</span>(<span class='no'>username</span>, <span class='no'>repo</span>, <span class='kw'>branch</span> <span class='kw'>=</span> <span class='st'>"master"</span>, <span class='no'>path</span>)</pre>
+    <pre class="usage"><span class='fu'>from_repo</span>(<span class='no'>username</span>, <span class='no'>repo</span>, <span class='no'>path</span>, <span class='kw'>branch</span> <span class='kw'>=</span> <span class='st'>"master"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,12 +142,12 @@ https://raw.githubusercontent.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/
       <td><p>A string. The name of the repo.</p></td>
     </tr>
     <tr>
-      <th>branch</th>
-      <td><p>A string. The branch the file is on.</p></td>
-    </tr>
-    <tr>
       <th>path</th>
       <td><p>A string. The path to the file.</p></td>
+    </tr>
+    <tr>
+      <th>branch</th>
+      <td><p>A string. The branch the file is on.</p></td>
     </tr>
     </table>
 
@@ -143,12 +155,25 @@ https://raw.githubusercontent.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/
 
     <p>An URL to the path.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>from_repo</span>(
+    <span class='kw'>username</span> <span class='kw'>=</span> <span class='st'>"liao961120"</span>,
+    <span class='kw'>repo</span> <span class='kw'>=</span> <span class='st'>"getable"</span>,
+    <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"docs/demo/data/df.json"</span>,
+    <span class='kw'>branch</span> <span class='kw'>=</span> <span class='st'>"master"</span>)</div><div class='output co'>#&gt; [1] "https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.json"</div><div class='input'><span class='fu'><a href='renderTable.html'>renderTable</a></span>(
+  <span class='fu'>from_repo</span>(
+    <span class='kw'>username</span> <span class='kw'>=</span> <span class='st'>"liao961120"</span>,
+    <span class='kw'>repo</span> <span class='kw'>=</span> <span class='st'>"getable"</span>,
+    <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"docs/demo/data/df.json"</span>,
+    <span class='kw'>branch</span> <span class='kw'>=</span> <span class='st'>"master"</span>)
+)</div><div class='output co'>#&gt; &lt;div id="data-from-web-1" data-url="https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.json" class="data-from-web-json df-from-web"&gt;&lt;/div&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

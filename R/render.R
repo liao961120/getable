@@ -18,6 +18,8 @@
 #'   json. Defaults to \code{FALSE}. Works only when the data is self-hosted
 #'   (i.e. not from Google Spreadsheet).
 #' @return A string representing an HTML div tag.
+#' @examples
+#' renderTable("https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.csv")
 #' @export
 renderTable <- function(url="./data/df.csv", isjson=FALSE) {
 
@@ -69,8 +71,21 @@ renderTable <- function(url="./data/df.csv", isjson=FALSE) {
 #' @param branch A string. The branch the file is on.
 #' @param path A string. The path to the file.
 #' @return An URL to the path.
+#' @examples
+#' from_repo(
+#'     username = "liao961120",
+#'     repo = "getable",
+#'     path = "docs/demo/data/df.json",
+#'     branch = "master")
+#' renderTable(
+#'   from_repo(
+#'     username = "liao961120",
+#'     repo = "getable",
+#'     path = "docs/demo/data/df.json",
+#'     branch = "master")
+#' )
 #' @export
-from_repo <- function(username, repo, branch='master', path) {
+from_repo <- function(username, repo, path, branch='master') {
   paste('https://raw.githubusercontent.com',
         trimws(username, whitespace = "[\t\r\n/]"),
         trimws(repo, whitespace = "[\t\r\n/]"),

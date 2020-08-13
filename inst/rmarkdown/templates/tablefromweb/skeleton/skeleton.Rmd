@@ -34,7 +34,7 @@ renderTable("data/df.csv")
 This table is generated from a JSON file on GitHub:
 
 ```{r results='asis'}
-renderTable("https://raw.githubusercontent.com/liao961120/getable/master/inst/rmarkdown/templates/tablefromweb/skeleton/data/df.json")
+renderTable("https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.json")
 ```
 
 Alternatively, you can use `getable::from_repo()`
@@ -45,8 +45,8 @@ renderTable(
   from_repo(
     username = "liao961120", 
     repo = "getable", 
-    branch = "master",
-    path = "inst/rmarkdown/templates/tablefromweb/skeleton/data/df.json")
+    path = "docs/demo/data/df.json",
+    branch = "master")
 )
 ```
 

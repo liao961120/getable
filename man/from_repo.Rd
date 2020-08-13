@@ -4,16 +4,16 @@
 \alias{from_repo}
 \title{Build URL to a file from GitHub Repository}
 \usage{
-from_repo(username, repo, branch = "master", path)
+from_repo(username, repo, path, branch = "master")
 }
 \arguments{
 \item{username}{A string. The owner of the repo.}
 
 \item{repo}{A string. The name of the repo.}
 
-\item{branch}{A string. The branch the file is on.}
-
 \item{path}{A string. The path to the file.}
+
+\item{branch}{A string. The branch the file is on.}
 }
 \value{
 An URL to the path.
@@ -21,4 +21,18 @@ An URL to the path.
 \description{
 This function builds a URL in the form:
 \code{https://raw.githubusercontent.com/<username>/<repo>/<branch>/<path>}.
+}
+\examples{
+from_repo(
+    username = "liao961120",
+    repo = "getable",
+    path = "docs/demo/data/df.json",
+    branch = "master")
+renderTable(
+  from_repo(
+    username = "liao961120",
+    repo = "getable",
+    path = "docs/demo/data/df.json",
+    branch = "master")
+)
 }

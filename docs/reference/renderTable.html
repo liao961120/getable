@@ -91,6 +91,18 @@ served the file)." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Intro/Intro.html">Intro</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -137,9 +149,9 @@ served the file).</p>
       <th>url</th>
       <td><p>A string. The URL to the source data of the table to be
 created. Could be a relative path (relative to the <code>.Rmd</code> src
-file) or an URL to a JSON file. <code>url</code> could also be an URL to
-a public Google Spreadsheet. Defaults to <code>./data/df.json</code> (see
-the template's structure).</p></td>
+file) or an URL to a JSON or CSV file. <code>url</code> could also be an URL
+to a publicly viewable Google Spreadsheet. Defaults to <code>./data/df.csv</code>
+(see the template's structure).</p></td>
     </tr>
     <tr>
       <th>isjson</th>
@@ -153,12 +165,15 @@ json. Defaults to <code>FALSE</code>. Works only when the data is self-hosted
 
     <p>A string representing an HTML div tag.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>renderTable</span>(<span class='st'>"https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.csv"</span>)</div><div class='output co'>#&gt; &lt;div id="data-from-web-2" data-url="https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.csv" class="data-from-web-csv df-from-web"&gt;&lt;/div&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
