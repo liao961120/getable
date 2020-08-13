@@ -72,6 +72,7 @@ renderTable <- function(url="./data/df.csv", isjson=FALSE) {
 #' @export
 from_repo <- function(username, repo, branch='master', path) {
   paste('https://raw.githubusercontent.com',
+        trimws(username, whitespace = "[\t\r\n/]"),
         trimws(repo, whitespace = "[\t\r\n/]"),
         trimws(branch, whitespace = "[\t\r\n/]"),
         trimws(path, whitespace = "[\t\r\n/]"),

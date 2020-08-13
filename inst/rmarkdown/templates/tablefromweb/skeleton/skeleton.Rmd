@@ -46,7 +46,7 @@ renderTable(
     username = "liao961120", 
     repo = "getable", 
     branch = "master",
-    path = "/inst/rmarkdown/templates/tablefromweb/skeleton/data/df.json")
+    path = "inst/rmarkdown/templates/tablefromweb/skeleton/data/df.json")
 )
 ```
 
