@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • getable</title>
+<title>Build URL to a file from GitHub Repository — from_repo • getable</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Build URL to a file from GitHub Repository — from_repo" />
+<meta property="og:description" content="This function builds a URL in the form:
+https://raw.githubusercontent.com/&amp;lt;username&amp;gt;/&amp;lt;repo&amp;gt;/&amp;lt;branch&amp;gt;/&amp;lt;path&amp;gt;." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +57,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -101,54 +104,53 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Build URL to a file from GitHub Repository</h1>
+    <small class="dont-index">Source: <a href='https://github.com/liao961120/getable/blob/master/R/render.R'><code>R/render.R</code></a></small>
+    <div class="hidden name"><code>from_repo.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function builds a URL in the form:
+<code>https://raw.githubusercontent.com/&lt;username&gt;/&lt;repo&gt;/&lt;branch&gt;/&lt;path&gt;</code>.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>from_repo</span>(<span class='no'>username</span>, <span class='no'>repo</span>, <span class='kw'>branch</span> <span class='kw'>=</span> <span class='st'>"master"</span>, <span class='no'>path</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="df2json.html">df2json()</a></code> </p>
-        </td>
-        <td><p>Convert Data Frame to Valid JSON Format for Serving</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="from_repo.html">from_repo()</a></code> </p>
-        </td>
-        <td><p>Build URL to a file from GitHub Repository</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="renderTable.html">renderTable()</a></code> </p>
-        </td>
-        <td><p>Render HTML Table in R Markdown with Data from Web</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>username</th>
+      <td><p>A string. The owner of the repo.</p></td>
+    </tr>
+    <tr>
+      <th>repo</th>
+      <td><p>A string. The name of the repo.</p></td>
+    </tr>
+    <tr>
+      <th>branch</th>
+      <td><p>A string. The branch the file is on.</p></td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><p>A string. The path to the file.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An URL to the path.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
     </ul>
+
   </div>
 </div>
 

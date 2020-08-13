@@ -4,7 +4,7 @@
 \alias{renderTable}
 \title{Render HTML Table in R Markdown with Data from Web}
 \usage{
-renderTable(url = "./data/df.json")
+renderTable(url = "./data/df.csv", isjson = FALSE)
 }
 \arguments{
 \item{url}{A string. The URL to the source data of the table to be
@@ -12,6 +12,10 @@ created. Could be a relative path (relative to the \code{.Rmd} src
 file) or an URL to a JSON file. \code{url} could also be an URL to
 a public Google Spreadsheet. Defaults to \code{./data/df.json} (see
 the template's structure).}
+
+\item{isjson}{Boolean. Whether the format of the self-hosted file is
+json. Defaults to \code{FALSE}. Works only when the data is self-hosted
+(i.e. not from Google Spreadsheet).}
 }
 \value{
 A string representing an HTML div tag.

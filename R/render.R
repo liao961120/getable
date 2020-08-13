@@ -11,12 +11,15 @@
 #'
 #' @param url A string. The URL to the source data of the table to be
 #'   created. Could be a relative path (relative to the \code{.Rmd} src
-#'   file) or an URL to a JSON file. \code{url} could also be an URL to
-#'   a public Google Spreadsheet. Defaults to \code{./data/df.json} (see
-#'   the template's structure).
+#'   file) or an URL to a JSON or CSV file. \code{url} could also be an URL
+#'   to a publicly viewable Google Spreadsheet. Defaults to \code{./data/df.csv}
+#'   (see the template's structure).
+#' @param isjson Boolean. Whether the format of the self-hosted file is
+#'   json. Defaults to \code{FALSE}. Works only when the data is self-hosted
+#'   (i.e. not from Google Spreadsheet).
 #' @return A string representing an HTML div tag.
 #' @export
-renderTable <- function(url="./data/df.json") {
+renderTable <- function(url="./data/df.csv", isjson=FALSE) {
 
   # Update counter
   if (is.null(options()[['dataFromWebCounter']]))
@@ -41,14 +44,38 @@ renderTable <- function(url="./data/df.json") {
                    '" class="data-from-web-gsheet df-from-web"></div>')
 
   # Parse as JSON
-  } else {
+  } else if (grepl('.json', url, fixed = T) || isjson) {
     html <- paste0('<div id="', id, '" data-url="', url,
                    '" class="data-from-web-json df-from-web"></div>')
+  # Parse as CSV (auto-detect delimiter)
+  } else {
+    html <- paste0('<div id="', id, '" data-url="', url,
+                   '" class="data-from-web-csv df-from-web"></div>')
   }
 
   # Render table on R Markdown
   cat(html)
   return(invisible(html))
+}
+
+
+#' Build URL to a file from GitHub Repository
+#'
+#' This function builds a URL in the form:
+#' \code{https://raw.githubusercontent.com/<username>/<repo>/<branch>/<path>}.
+#'
+#' @param username A string. The owner of the repo.
+#' @param repo A string. The name of the repo.
+#' @param branch A string. The branch the file is on.
+#' @param path A string. The path to the file.
+#' @return An URL to the path.
+#' @export
+from_repo <- function(username, repo, branch='master', path) {
+  paste('https://raw.githubusercontent.com',
+        trimws(repo, whitespace = "[\t\r\n/]"),
+        trimws(branch, whitespace = "[\t\r\n/]"),
+        trimws(path, whitespace = "[\t\r\n/]"),
+        sep='/')
 }
 
 
@@ -59,7 +86,7 @@ renderTable <- function(url="./data/df.json") {
 #' @param ... Additional arguments arguments passed on to
 #'   \link[jsonlite]{toJSON}.
 #' @export
-df2file <- function(df, output = "./data/df.json", ...) {
+df2json <- function(df, output = "./data/df.json", ...) {
   writeLines(jsonlite::toJSON(df, dataframe = "rows", ...), output)
 }
 

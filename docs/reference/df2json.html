@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • getable</title>
+<title>Convert Data Frame to Valid JSON Format for Serving — df2json • getable</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Convert Data Frame to Valid JSON Format for Serving — df2json" />
+<meta property="og:description" content="Convert Data Frame to Valid JSON Format for Serving" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -101,54 +103,45 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Convert Data Frame to Valid JSON Format for Serving</h1>
+    <small class="dont-index">Source: <a href='https://github.com/liao961120/getable/blob/master/R/render.R'><code>R/render.R</code></a></small>
+    <div class="hidden name"><code>df2json.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Convert Data Frame to Valid JSON Format for Serving</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>df2json</span>(<span class='no'>df</span>, <span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"./data/df.json"</span>, <span class='no'>...</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="df2json.html">df2json()</a></code> </p>
-        </td>
-        <td><p>Convert Data Frame to Valid JSON Format for Serving</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="from_repo.html">from_repo()</a></code> </p>
-        </td>
-        <td><p>Build URL to a file from GitHub Repository</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="renderTable.html">renderTable()</a></code> </p>
-        </td>
-        <td><p>Render HTML Table in R Markdown with Data from Web</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>A data frame.</p></td>
+    </tr>
+    <tr>
+      <th>output</th>
+      <td><p>A string. The path to the exported data frame.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments arguments passed on to
+<a href='https://jeroen.cran.dev/jsonlite/reference/fromJSON.html'>toJSON</a>.</p></td>
+    </tr>
     </table>
-  </div>
 
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
     </ul>
+
   </div>
 </div>
 

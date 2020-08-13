@@ -128,7 +128,7 @@ when users view the rendered HTML file in the browser (a server is needed to
 served the file).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>renderTable</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>"./data/df.json"</span>)</pre>
+    <pre class="usage"><span class='fu'>renderTable</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>"./data/df.csv"</span>, <span class='kw'>isjson</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -140,6 +140,12 @@ created. Could be a relative path (relative to the <code>.Rmd</code> src
 file) or an URL to a JSON file. <code>url</code> could also be an URL to
 a public Google Spreadsheet. Defaults to <code>./data/df.json</code> (see
 the template's structure).</p></td>
+    </tr>
+    <tr>
+      <th>isjson</th>
+      <td><p>Boolean. Whether the format of the self-hosted file is
+json. Defaults to <code>FALSE</code>. Works only when the data is self-hosted
+(i.e. not from Google Spreadsheet).</p></td>
     </tr>
     </table>
 

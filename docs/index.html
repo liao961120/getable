@@ -72,7 +72,7 @@
 <a href="#getable" class="anchor"></a>GETable</h1></div>
 <!-- badges: start -->
 
-<p><strong>GETable</strong> lets you insert dynamic HTML tables in R Markdown documents. “Dynamic” in the sense that the data are not hard-coded into output HTML documents but are requested from <strong>JSON APIs</strong> or <strong>Google Spreadsheets</strong> when the user visit the web page. This mean that you can update the data without recompiling the <code>.Rmd</code> document!</p>
+<p><strong>GETable</strong> lets you insert dynamic HTML tables in R Markdown documents. “Dynamic” in the sense that the data are not hard-coded into output HTML documents but are requested from <strong>Google Spreadsheets</strong> or <strong>hosted JSON/CSV files</strong> when the user visit the web page. This mean that you can update the data without recompiling the <code>.Rmd</code> document!</p>
 <p><img src="https://img.yongfu.name/posts/getable.gif" alt="GETable Demo"></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -82,19 +82,20 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>Import R Markdown template in RStudio: <code>File &gt; New File &gt; R Markdown &gt; From Template &gt; HTML Tables with Dynamic Data {GETable}</code></p>
-<p>Compile and Enjoy!</p>
+<p><a href="https://yongfu.name/getable/demo/"><strong>Demo</strong></a></p>
+<div id="import-r-markdown-template" class="section level3">
+<h3 class="hasAnchor">
+<a href="#import-r-markdown-template" class="anchor"></a>Import R Markdown Template</h3>
+<ol>
+<li>Import R Markdown template in RStudio: <code>File &gt; New File &gt; R Markdown &gt; From Template &gt; HTML Tables with Dynamic Data {GETable}</code>.</li>
+<li>Compile and Enjoy!</li>
+</ol>
+</div>
 </div>
 <div id="under-the-hood" class="section level2">
 <h2 class="hasAnchor">
 <a href="#under-the-hood" class="anchor"></a>Under the hood</h2>
-<p><strong>GETable</strong> uses JavaScript to asynchronously request data from a web server. You can serve your data on the web, for example, on Google Spreadsheet or on static site services such as <a href="https://pages.github.com">GitHub Pages</a> and <a href="https://www.netlify.com">Netlify</a>.</p>
-<p>Hosting data by yourself requires you to first convert the data into JSON formats. This is conveniently provided by the function <code><a href="https://rdrr.io/pkg/GETable/man/df2file.html">GETable::df2file()</a></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">getable<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/getable/man/df2file.html">df2file</a></span>(iris, <span class="st">"output-iris.json"</span>)</a></code></pre></div>
-<p>You can then push <code>output-iris.json</code> to a github repo and serve this file. Then, in your <code>.Rmd</code>, simply create an HTML table from the hosted <code>output-iris.json</code> by:</p>
-<pre class="rmd"><code>```{r echo=FALSE, results='asis'}
-getable::renderTable("https://&lt;username&gt;.github.io/&lt;repo&gt;/path/to/output-iris.json")
-```</code></pre>
+<p><strong>GETable</strong> uses JavaScript to asynchronously request data from a web server. You can host your data on the web, for example, in a <a href="https://docs.google.com/spreadsheets/d/1KV8XOlBcax3gca5s6Wl7M06nVrpui39hHGXDv-K6gM8">Google Spreadsheet</a>, in a <a href="https://github.com/liao961120/getable/blob/master/inst/rmarkdown/templates/tablefromweb/skeleton/data/df.json">GitHub repo</a>, or on static site services such as <a href="https://pages.github.com">GitHub Pages</a> and <a href="https://www.netlify.com">Netlify</a>.</p>
 </div>
 </div>
   </div>
