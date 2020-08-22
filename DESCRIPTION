@@ -1,18 +1,17 @@
 Package: getable
 Type: Package
-Title: HTML Tables with Dynamic Data in R Markdown
-Version: 1.0.0
+Title: Fetching Tabular Data "Onload" in Compiled R Markdown HTML Documents
+Version: 1.0.2
 Authors@R: 
     person(given = "Yongfu", 
            family = "Liao",
            email = "liao961120@gmail.com", 
            role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1814-2993"))
-Maintainer: Yongfu Liao <liao961120@gmail.com>
 Description: Dynamically retrieve data from the web to render HTML tables
     on inspection in R Markdown HTML documents.
-URL: https://yongfu.name/getable/, https://github.com/liao961120/getable
-BugReports: https://github.com/liao961120/getable/issues
+URL: https://yongfu.name/getable/, https://github.com/liao961120/getable/
+BugReports: https://github.com/liao961120/getable/issues/
 Depends: R (>= 3.4.0)
 License: MIT + file LICENSE
 Encoding: UTF-8

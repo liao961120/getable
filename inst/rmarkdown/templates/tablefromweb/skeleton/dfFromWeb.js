@@ -44,8 +44,6 @@ function createFromCSV(dom_id, url) {
 
 // Create table from self-hosted json files
 function createFromJSON(dom_id, url) {
-    // createFromJSON('new-table', './data/df.json');
-
     // HTTP request
     axios({
         method: 'get',

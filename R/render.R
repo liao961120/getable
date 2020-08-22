@@ -24,13 +24,10 @@
 renderTable <- function(url="./data/df.csv", isjson=FALSE) {
 
   # Update counter
-  if (is.null(options()[['dataFromWebCounter']]))
-    options('dataFromWebCounter' = 1)
-  else
-    options('dataFromWebCounter' = 1 + options()[['dataFromWebCounter']])
+  .pkgenv[['dataFromWebCounter']] <- 1 + .pkgenv[['dataFromWebCounter']]
 
   # div id for table
-  id <- paste0('data-from-web-', options()[['dataFromWebCounter']])
+  id <- paste0('data-from-web-', .pkgenv[['dataFromWebCounter']])
 
   # Parse as google spreadsheet
   if (grepl('docs.google.com/spreadsheets/d/', url, fixed = T)) {
