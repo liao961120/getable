@@ -20,7 +20,7 @@ library(getable)
 
 ## Table from a CSV file
 
-This table is generated from a locally served CSV file^[You need to set `results='asis'` in the code chunk to display the table. You may also want to set `echo=FALSE` to hide the code chunk.]:
+This table is generated from a locally served ^[That is, you need to serve the files and the data with a server to see the table. This mean you cannot simply open the HTML file and see the table (viewing the compiled HTML in RStudio's Viewer pane works, since RStudio serve the files for you).] CSV file^[You need to set `results='asis'` in the code chunk to display the table. You may also want to set `echo=FALSE` to hide the code chunk.]:
 
 ```{r results='asis'}
 write.csv(iris, "data/df.csv")

@@ -15,7 +15,8 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 ## Installation
 
 ``` r
-remotes::install_github("liao961120/getable")
+install.packages("getable")
+# remotes::install_github("liao961120/getable")
 ```
 
 
