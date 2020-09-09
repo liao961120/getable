@@ -50,7 +50,7 @@ title: "Inserting dynamic HTML tables"
 output: 
   html_document:
     includes:
-      in_header: dfFromWeb.html  # Needed for working properly
+      in_header: dfFromWeb.html  # Needed to work properly
 ---
 
 ```{r results='asis'}
