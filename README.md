@@ -37,7 +37,7 @@ Or, you can simply run the command below in the R console:
 rmarkdown::draft("name_your_file.Rmd", template = "tablefromweb", package = "getable")
 ```
 
-The template contains several files, of which `dfFromWeb.html`, `dfFromWeb.js`, and `dfFromWeb.css` are required for the compiled HTML to work properly (DO NOT change the RELATIVE PATHs between these files and the source Rmd). Note that you can style the appearance of the HTML tables with CSS in `dfFromWeb.css`, and if you know a lot about JS, you can even modify the code in `dfFromWeb.js` to use other JS libraries to generate the HTML tables. You can see a working example [here](https://yongfu.name/getable/demo/)
+The template contains several files, of which `dfFromWeb.html`, `dfFromWeb.js`, and `dfFromWeb.css` are required for the compiled HTML to work properly (DO NOT change the RELATIVE PATHs between these files and the source Rmd). Note that you can style the appearance of the HTML tables with CSS in `dfFromWeb.css`, and if you know a lot about JS, you can even modify the code in `dfFromWeb.js` to use other JS libraries to generate the HTML tables. You can see a working example [here](https://yongfu.name/getable/demo/).
 
 
 ### Inserting Tables
