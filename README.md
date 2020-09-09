@@ -14,21 +14,49 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 
 ## Installation
 
-``` r
+`getable` is now on CRAN, which can be installed with:
+
+```r
 install.packages("getable")
-# remotes::install_github("liao961120/getable")
+```
+
+To install the latest version from GitHub:
+
+```r
+remotes::install_github("liao961120/getable")
 ```
 
 
 ## Usage
 
-[**Demo**](https://yongfu.name/getable/demo/)
+`getable` comes with a template that you can import in RStudio by selecting: `File > New File > R Markdown > From Template > HTML Tables with Dynamic Data {GETable}`.
+
+Or, you can simply run the command below in the R console:
+
+```r
+rmarkdown::draft("name_your_file.Rmd", template = "tablefromweb", package = "getable")
+```
+
+The template contains several files, of which `dfFromWeb.html`, `dfFromWeb.js`, and `dfFromWeb.css` are required for the compiled HTML to work properly (DO NOT change the RELATIVE PATHs between these files and the source Rmd). Note that you can style the appearance of the HTML tables with CSS in `dfFromWeb.css`, and if you know a lot about JS, you can even modify the code in `dfFromWeb.js` to use other JS libraries to generate the HTML tables. You can see a working example [here](https://yongfu.name/getable/demo/)
 
 
-### Import R Markdown Template 
+### Inserting Tables
 
-1. Import R Markdown template in RStudio: `File > New File > R Markdown > From Template > HTML Tables with Dynamic Data {GETable}`.
-1. Compile and Enjoy!
+Simply use the function `renderTable("<URL>")` in a code chunk to insert a dynamic HTML table. Remember to set the chunk option `results='asis'`:
+
+````rmd
+---
+title: "Inserting dynamic HTML tables"
+output: 
+  html_document:
+    includes:
+      in_header: dfFromWeb.html  # Needed for working properly
+---
+
+```{r results='asis'}
+getable::renderTable("https://yongfu.name/getable/demo/data/df.csv")
+```
+````
 
 
 ## Under the hood
