@@ -20,7 +20,7 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 install.packages("getable")
 ```
 
-To install the latest version from GitHub:
+or, install the latest version from GitHub:
 
 ```r
 remotes::install_github("liao961120/getable")
