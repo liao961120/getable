@@ -1,7 +1,7 @@
 Package: getable
 Type: Package
 Title: Fetching Tabular Data "Onload" in Compiled R Markdown HTML Documents
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: 
     person(given = "Yongfu", 
            family = "Liao",
@@ -18,7 +18,8 @@ Encoding: UTF-8
 LazyData: true
 Suggests: 
     jsonlite,
-    rmarkdown,
-    knitr
+    rmarkdown
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
+Imports: 
+    knitr
