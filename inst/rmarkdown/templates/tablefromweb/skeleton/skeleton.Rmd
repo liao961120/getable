@@ -20,9 +20,9 @@ library(getable)
 
 ## Table from a CSV file
 
-This table is generated from a locally served CSV file^[You need to set `results='asis'` in the code chunk to display the table. You may also want to set `echo=FALSE` to hide the code chunk.]:
+This table is generated from a locally served CSV file^[You may want to set `echo=FALSE` to hide the code chunk.]:
 
-```{r results='asis'}
+```{r}
 write.csv(iris, "data/df.csv")
 renderTable("data/df.csv")
 ```
@@ -33,14 +33,14 @@ renderTable("data/df.csv")
 
 This table is generated from a JSON file on GitHub:
 
-```{r results='asis'}
+```{r}
 renderTable("https://raw.githubusercontent.com/liao961120/getable/master/docs/demo/data/df.json")
 ```
 
 Alternatively, you can use `getable::from_repo()`
 to help you construct the url:
 
-```{r results='asis'}
+```{r}
 renderTable(
   from_repo(
     username = "liao961120", 
@@ -86,7 +86,7 @@ getable::df2json(df, "data/df.json")
 
 ## Table from Google Spreadsheet
 
-```{r results='asis'}
+```{r}
 getable::renderTable("https://docs.google.com/spreadsheets/d/1KV8XOlBcax3gca5s6Wl7M06nVrpui39hHGXDv-K6gM8/edit?usp=sharing")
 ```
 

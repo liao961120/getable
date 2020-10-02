@@ -53,9 +53,10 @@ renderTable <- function(url="./data/df.csv", isjson=FALSE) {
   }
 
   # Render table on R Markdown
-  cat(html)
-  return(invisible(html))
+  class(html) <- 'getable.html.tag'
+  return(html)
 }
+
 
 
 #' Build URL to a file from GitHub Repository
@@ -104,6 +105,9 @@ df2json <- function(df, output = "./data/df.json", ...) {
 }
 
 
-
-
-
+#' @importFrom knitr asis_output knit_print
+#' @export
+knit_print.getable.html.tag <- function(x, ...) {
+    structure(x, class = 'knit_asis')
+}
+registerS3method("knit_print", "getable.html.tag", knit_print.getable.html.tag)
