@@ -42,7 +42,7 @@ The template contains several files, of which `dfFromWeb.html`, `dfFromWeb.js`, 
 
 ### Inserting Tables
 
-Simply use the function `renderTable("<URL>")` in a code chunk to insert a dynamic HTML table. Remember to set the chunk option `results='asis'`:
+Simply use the function `renderTable("<URL>")` in a code chunk to insert a dynamic HTML table:
 
 ````rmd
 ---
@@ -53,7 +53,7 @@ output:
       in_header: dfFromWeb.html  # Needed to work properly
 ---
 
-```{r results='asis'}
+```{r}
 getable::renderTable("https://yongfu.name/getable/demo/data/df.csv")
 ```
 ````
