@@ -89,20 +89,33 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"getable"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># remotes::install_github("liao961120/getable")</span></a></code></pre></div>
+<p><code>getable</code> is now on CRAN, which can be installed with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"getable"</span>)</span></code></pre></div>
+<p>or, install the latest version from GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"liao961120/getable"</span>)</span></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p><a href="https://yongfu.name/getable/demo/"><strong>Demo</strong></a></p>
-<div id="import-r-markdown-template" class="section level3">
+<p><code>getable</code> comes with a template that you can import in RStudio by selecting: <code>File &gt; New File &gt; R Markdown &gt; From Template &gt; HTML Tables with Dynamic Data {GETable}</code>.</p>
+<p>Or, you can simply run the command below in the R console:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>rmarkdown<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/rmarkdown/man/draft.html">draft</a></span>(<span class="st">"name_your_file.Rmd"</span>, <span class="dt">template =</span> <span class="st">"tablefromweb"</span>, <span class="dt">package =</span> <span class="st">"getable"</span>)</span></code></pre></div>
+<p>The template contains several files, of which <code>dfFromWeb.html</code>, <code>dfFromWeb.js</code>, and <code>dfFromWeb.css</code> are required for the compiled HTML to work properly (DO NOT change the RELATIVE PATHs between these files and the source Rmd). Note that you can style the appearance of the HTML tables with CSS in <code>dfFromWeb.css</code>, and if you know a lot about JS, you can even modify the code in <code>dfFromWeb.js</code> to use other JS libraries to generate the HTML tables. You can see a working example <a href="https://yongfu.name/getable/demo/">here</a>.</p>
+<div id="inserting-tables" class="section level3">
 <h3 class="hasAnchor">
-<a href="#import-r-markdown-template" class="anchor"></a>Import R Markdown Template</h3>
-<ol>
-<li>Import R Markdown template in RStudio: <code>File &gt; New File &gt; R Markdown &gt; From Template &gt; HTML Tables with Dynamic Data {GETable}</code>.</li>
-<li>Compile and Enjoy!</li>
-</ol>
+<a href="#inserting-tables" class="anchor"></a>Inserting Tables</h3>
+<p>Simply use the function <code><a href="reference/renderTable.html">renderTable("&lt;URL&gt;")</a></code> in a code chunk to insert a dynamic HTML table:</p>
+<pre class="rmd"><code>---
+title: "Inserting dynamic HTML tables"
+output: 
+  html_document:
+    includes:
+      in_header: dfFromWeb.html  # Needed to work properly
+---
+
+```{r}
+getable::renderTable("https://yongfu.name/getable/demo/data/df.csv")
+```</code></pre>
 </div>
 </div>
 <div id="under-the-hood" class="section level2">
