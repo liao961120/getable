@@ -1,0 +1,26 @@
+---
+title: "GETable Usage"
+author: "Yongfu Liao"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    includes:
+      in_header: dfFromWeb.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(getable)
+```
+
+
+## Table from a CSV file
+
+```{r}
+renderTable("https://yongfu.name/temp-data/diamonds.csv")
+```
+
