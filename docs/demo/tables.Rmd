@@ -17,7 +17,7 @@ df <- head(iris, 12)
 ## 直接印出 Data Frame
 
 ```{r}
-print(df) # print(df)
+df  # print(df)
 ```
 
 ## 使用表格函數印出 Data Frame
